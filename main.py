@@ -4,25 +4,25 @@ app = FastAPI()
 
 
 @app.get('/todo/')
-def retrive_all_todo():
+async def fetch_all_todos():
     return {'Hello': 'Get'}
 
 
 @app.post('/todo/')
-def create_todo():
+async def create_todo():
     return {'Hello': 'Post'}
 
 
-@app.put("/todo/{id}")
-def update_todo(id):
-    return {'Hello': 'Put-' + str(id)}
-
-
 @app.get("/todo/{id}")
-def retrive_todo(id):
+async def retrieve_todo(id):
     return {'Hello': 'Get-' + str(id)}
 
 
+@app.put("/todo/{id}")
+async def update_todo(id):
+    return {'Hello': 'Put-' + str(id)}
+
+
 @app.delete("/todo/{id}")
-def delete_todo(id):
+async def delete_todo(id):
     return {'Hello': 'Delete-' + str(id)}
