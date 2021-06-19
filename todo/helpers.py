@@ -30,6 +30,7 @@ async def todo_retrieve(id):
 
 async def todo_update(id, todo):
     db, client = get_connection()
+    todo = todo.dict(exclude_unset=True)
     await db.todo.find_one_and_update({"_id": ObjectId(id)}, {
         "$set": dict(todo)
         })

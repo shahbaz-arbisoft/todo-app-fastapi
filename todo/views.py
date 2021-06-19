@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 
 from todo.helpers import todo_list, todo_create, todo_retrieve, todo_update, todo_delete
-from todo.models import Todo
+from todo.models import Todo, TodoCreate
 from todo.serializers import ToDosSerializer, ToDoSerializer
 
 router = APIRouter()
@@ -14,7 +14,7 @@ async def get_all_todos():
 
 
 @router.post('/todo/')
-async def create_todo(todo: Todo):
+async def create_todo(todo: TodoCreate):
     response = await todo_create(todo)
     if response:
         return ToDoSerializer(response)
