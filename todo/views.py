@@ -41,5 +41,5 @@ async def update_todo(id, todo: Todo):
 async def delete_todo(id):
     response = await todo_delete(id)
     if response:
-        return "TODO Successfully Deleted"
+        return "ToDo Successfully Deleted"
     raise HTTPException(404, f"There is no todo with this id {id}")
