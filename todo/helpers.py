@@ -44,3 +44,11 @@ async def todo_delete(id):
     await db.todo.delete_one({"_id": ObjectId(id)})
     client.close()
     return True
+
+
+def Response(data, message):
+    return {
+        "data": data,
+        "code": 200,
+        "message": message,
+        }
