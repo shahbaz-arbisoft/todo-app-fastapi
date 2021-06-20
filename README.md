@@ -1,5 +1,5 @@
 # todo-app-fastapi-monogodb
-A python based application that use Fast API to perform CRUD functionalities of TODO item. 
+A python based application that uses Fast API and MongoDB to perform CRUD functionalities of TODO item. 
 
 ## Running Documentation Locally
 
